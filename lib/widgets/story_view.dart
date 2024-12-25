@@ -238,16 +238,12 @@ class StoryItem {
             children: <Widget>[
               FittedBox(
                 fit: BoxFit.cover,
-                child: SizedBox(
-                  width: controller.value.size.width,
-                  height: controller.value.size.height,
-                  child: StoryVideo.url(
-                    url,
-                    controller: controller,
-                    requestHeaders: requestHeaders,
-                    loadingWidget: loadingWidget,
-                    errorWidget: errorWidget,
-                  ),
+                child: StoryVideo.url(
+                  url,
+                  controller: controller,
+                  requestHeaders: requestHeaders,
+                  loadingWidget: loadingWidget,
+                  errorWidget: errorWidget,
                 ),
               ),
               SafeArea(
