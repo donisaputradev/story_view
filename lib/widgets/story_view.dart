@@ -219,6 +219,7 @@ class StoryItem {
   /// Shorthand for creating page video. [controller] should be same instance as
   /// one passed to the `StoryView`
   factory StoryItem.pageVideo(
+    BuildContext context,
     String url, {
     required StoryController controller,
     Key? key,
