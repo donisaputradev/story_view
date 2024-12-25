@@ -236,12 +236,19 @@ class StoryItem {
           color: Colors.black,
           child: Stack(
             children: <Widget>[
-              StoryVideo.url(
-                url,
-                controller: controller,
-                requestHeaders: requestHeaders,
-                loadingWidget: loadingWidget,
-                errorWidget: errorWidget,
+              FittedBox(
+                fit: BoxFit.cover,
+                child: SizedBox(
+                  width: controller.value.size.width,
+                  height: controller.value.size.height,
+                  child: StoryVideo.url(
+                    url,
+                    controller: controller,
+                    requestHeaders: requestHeaders,
+                    loadingWidget: loadingWidget,
+                    errorWidget: errorWidget,
+                  ),
+                ),
               ),
               SafeArea(
                 child: Align(
