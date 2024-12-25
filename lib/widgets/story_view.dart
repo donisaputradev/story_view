@@ -236,9 +236,11 @@ class StoryItem {
           color: Colors.black,
           child: Stack(
             children: <Widget>[
-              Positioned.fill(
-                child: FittedBox(
-                  fit: BoxFit.cover,
+              FittedBox(
+                fit: BoxFit.cover,
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
                   child: StoryVideo.url(
                     url,
                     controller: controller,
@@ -246,7 +248,7 @@ class StoryItem {
                     loadingWidget: loadingWidget,
                     errorWidget: errorWidget,
                   ),
-                )
+                ),
               ),
               SafeArea(
                 child: Align(
