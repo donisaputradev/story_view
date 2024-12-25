@@ -219,7 +219,6 @@ class StoryItem {
   /// Shorthand for creating page video. [controller] should be same instance as
   /// one passed to the `StoryView`
   factory StoryItem.pageVideo(
-    BuildContext context,
     String url, {
     required StoryController controller,
     Key? key,
@@ -237,19 +236,12 @@ class StoryItem {
           color: Colors.black,
           child: Stack(
             children: <Widget>[
-              FittedBox(
-                fit: BoxFit.cover,
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
-                  child: StoryVideo.url(
-                    url,
-                    controller: controller,
-                    requestHeaders: requestHeaders,
-                    loadingWidget: loadingWidget,
-                    errorWidget: errorWidget,
-                  ),
-                ),
+              StoryVideo.url(
+                url,
+                controller: controller,
+                requestHeaders: requestHeaders,
+                loadingWidget: loadingWidget,
+                errorWidget: errorWidget,
               ),
               SafeArea(
                 child: Align(
